@@ -21,4 +21,5 @@ jobs:
         with:
           folder: out # The folder the action should deploy.
           branch: main
-          target-folder: docs  
+          target-folder: docs
+          clean: false # Don't remove existing files like CNAME
