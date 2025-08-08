@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import QRCode from "qrcode";
 
 interface QRCodeColors {
@@ -78,10 +79,13 @@ function QRCodeContent({ colors, randomColors }: QRCodeGeneratorProps) {
         <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700">
           {qrCodeUrl ? (
             <div className="space-y-6">
-              <img
+              <Image
                 src={qrCodeUrl}
                 alt="QR Code for current URL"
+                width={400}
+                height={400}
                 className="mx-auto rounded-lg shadow-md"
+                unoptimized
               />
             </div>
           ) : (
